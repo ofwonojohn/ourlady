@@ -1,0 +1,49 @@
+# O'Level grading based on score
+def grade_olevel(score):
+    if score >= 85:
+        return "D1"
+    elif score >= 70:
+        return "D2"
+    elif score >= 65:
+        return "C3"
+    elif score >= 60:
+        return "C4"
+    elif score >= 55:
+        return "C5"
+    elif score >= 50:
+        return "C6"
+    elif score >= 45:
+        return "P7"
+    elif score >= 40:
+        return "P8"
+    else:
+        return "F9"
+
+# A'Level grading based on score
+def grade_alevel(score):
+    if score >= 85:
+        return "A"
+    elif score >= 70:
+        return "B"
+    elif score >= 65:
+        return "C"
+    elif score >= 60:
+        return "C"
+    elif score >= 55:
+        return "D"
+    elif score >= 50:
+        return "D"
+    else:
+        return "F"
+
+# A'Level point conversion
+def alevel_points(grade):
+    grade_to_points = {
+        "A": 6,
+        "B": 5,
+        "C": 4,
+        "D": 3,
+        "E": 2,  # you may add this if you plan to differentiate D and E
+        "F": 0
+    }
+    return grade_to_points.get(grade, 0)
