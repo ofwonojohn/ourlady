@@ -13,6 +13,7 @@ class OLevelMark(models.Model):
     subject = models.ForeignKey(OLevelSubject, on_delete=models.CASCADE)
     term = models.ForeignKey(Term, on_delete=models.CASCADE)
     score = models.FloatField()
+    year = models.IntegerField(null = True, blank=True)
 
     class Meta:
         unique_together = ('student', 'subject', 'term')

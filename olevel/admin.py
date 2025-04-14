@@ -1,3 +1,8 @@
 from django.contrib import admin
+from .models import OLevelMark
 
-# Register your models here.
+@admin.register(OLevelMark)
+class OLevelMarkAdmin(admin.ModelAdmin):
+    list_display = ['student', 'subject', 'score', 'term', 'year']
+    list_filter = ['term', 'year', 'subject']
+    search_fields = ['student__name']

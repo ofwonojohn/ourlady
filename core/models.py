@@ -32,7 +32,7 @@ class Student(models.Model):
 
 
 class Term(models.Model):
-    name = models.CharField(max_length=10)  # e.g. "Term 1"
+    name = models.CharField(max_length=10) 
     year = models.IntegerField()
 
     class Meta:
@@ -40,3 +40,10 @@ class Term(models.Model):
 
     def __str__(self):
         return f"{self.name} {self.year}"
+
+class Subject(models.Model):
+    name = models.CharField(max_length=100)
+    level = models.CharField(max_length=10, choices=[('O', 'O-Level'), ('A', 'A-Level')])
+
+    def __str__(self):
+        return self.name

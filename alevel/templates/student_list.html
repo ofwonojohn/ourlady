@@ -1,0 +1,10 @@
+<h2>A-Level Students</h2>
+<ul>
+  {% for student in students %}
+    <li>
+      {{ student.name }} -
+      <a href="{% url 'alevel:profile' student.id %}">Profile</a> |
+      <a href="{% url 'alevel:submit_mark' student.id %}">Add Mark</a>
+    </li>
+  {% endfor %}
+</ul>
